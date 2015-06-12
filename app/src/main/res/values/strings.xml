@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AppliNotes</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="titre_accueil">Bienvenue</string>
+    <string name="accueil_choix1">Voir mes notes</string>
+    <string name="accueil_ma_moyenne">Ma moyenne : %1$f/20</string>
+    <string name="note_sur_vingt">%1$d /20</string>
+    <string name="btn_add_note">Ajouter la note</string>
+    <string name="entete_coeff">Coeff</string>
+    <string name="entete_note">Note</string>
+    <string name="entete_matiere">Nom de la matière</string>
+    <string name="add_note_title">Ajouter une nouvelle note</string>
+    <string name="add_nom_matiere">Nom de la matière :</string>
+    <string name="add_note">Note obtenue :</string>
+    <string name="add_coeff_matiere">Coefficient de la matière (si non déjà renseigné)</string>
+    <string name="add_matiere_error">Nom de la matière incorrect</string>
+    <string name="add_note_error">Note incorrecte</string>
+    <string name="add_coeff_error">Coeff incorrect</string>
+    <string name="add_ok">Ajout OK</string>
+</resources>

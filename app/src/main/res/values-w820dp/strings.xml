@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_note_title">Ajouter une nouvelle note.</string>
+    <string name="add_nom_matiere">Nom de la matière :</string>
+    <string name="add_note">Note obtenue</string>
+    <string name="add_coeff_matiere">Coefficient de la matière (si non déjà renseigné)</string>
+    <string name="add_ok">Ajout OK</string>
+</resources>
