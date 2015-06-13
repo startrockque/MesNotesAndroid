@@ -116,6 +116,8 @@ public class NoteBDD {
     }
 
     public void dropTable() {
-        maBDD.dropTable(bdd);
+        for (int i = 1; i <= getTaille(); i++){
+            removeNoteWithID(i);
+        }
     }
 }

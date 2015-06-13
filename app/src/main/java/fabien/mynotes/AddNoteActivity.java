@@ -1,6 +1,7 @@
 package fabien.mynotes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,7 +14,7 @@ import fabien.modele.Note;
 /**
  * Created by Fabien on 10/06/2015.
  */
-public class AddNote extends Activity {
+public class AddNoteActivity extends Activity {
     private NoteBDD noteBdd;
     private FormEditText matiere, note, coeff;
 
@@ -46,7 +47,7 @@ public class AddNote extends Activity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         overridePendingTransition(R.anim.left_to_center, R.anim.center_to_right);
         finish();
     }

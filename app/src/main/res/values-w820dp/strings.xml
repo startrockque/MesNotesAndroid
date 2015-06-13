@@ -5,4 +5,6 @@
     <string name="add_note">Note obtenue</string>
     <string name="add_coeff_matiere">Coefficient de la matière (si non déjà renseigné)</string>
     <string name="add_ok">Ajout OK</string>
+    <string name="mod_note_title">Modifier la note</string>
+    <string name="btn_add_a_note">Ajouter une note</string>
 </resources>

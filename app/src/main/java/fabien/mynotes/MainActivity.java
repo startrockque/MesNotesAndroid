@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,7 @@ public class MainActivity extends Activity {
     private List<Note> listeNotes = new ArrayList<Note>();
     private NoteBDD noteBdd;
     private static final int CODE_DE_L_AJOUT = 1;
+    private static final int CODE_DE_LA_MODIF = 2;
     private TextView maMoyenne;
 
     @Override
@@ -52,6 +55,21 @@ public class MainActivity extends Activity {
         listeNotesView.setAdapter(noteAdapter);
 
         maMoyenne.setText(getResources().getString(R.string.accueil_ma_moyenne, moyenne(listeNotes)));
+
+        listeNotesView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Note note = listeNotes.get(position);
+                Intent intent = new Intent(getApplicationContext(), ModifyNoteActivity.class);
+                intent.putExtra("id", note.getId());
+                intent.putExtra("matiere", note.getMatiere());
+                intent.putExtra("note", note.getNote());
+                intent.putExtra("coeff", note.getCoeff());
+                startActivity(intent);
+                overridePendingTransition(R.anim.right_to_center, R.anim.center_to_left);
+                finish();
+            }
+        });
     }
 
     private double moyenne(List<Note> listeNotes) {
@@ -64,14 +82,9 @@ public class MainActivity extends Activity {
         return totalNote/totalCoeff;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        loadData();
-        setList();
-    }
-
     public void addNote(View view) {
-        startActivityForResult(new Intent(getApplicationContext(), AddNote.class), CODE_DE_L_AJOUT);
+        startActivity(new Intent(getApplicationContext(), AddNoteActivity.class));
         overridePendingTransition(R.anim.right_to_center, R.anim.center_to_left);
+        finish();
     }
 }

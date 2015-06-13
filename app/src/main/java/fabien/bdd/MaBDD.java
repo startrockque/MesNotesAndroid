@@ -20,8 +20,6 @@ public class MaBDD extends SQLiteOpenHelper {
             + COL_NOTE + " INTEGER NOT NULL, "
             + COL_COEFF + " INTEGER NOT NULL);";
 
-    private static final String DROP_BDD = "DROP TABLE "+ TABLE_NOTES +";";
-
     public MaBDD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -35,9 +33,5 @@ public class MaBDD extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // NOTHING
-    }
-
-    public void dropTable(SQLiteDatabase db) {
-        db.execSQL(DROP_BDD);
     }
 }
