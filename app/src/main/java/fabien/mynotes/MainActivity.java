@@ -20,10 +20,8 @@ import fabien.modele.Note;
  * Created by Fabien on 10/06/2015.
  */
 public class MainActivity extends Activity {
-    private List<Note> listeNotes = new ArrayList<Note>();
+    private List<Note> listeNotes = new ArrayList<>();
     private NoteBDD noteBdd;
-    private static final int CODE_DE_L_AJOUT = 1;
-    private static final int CODE_DE_LA_MODIF = 2;
     private TextView maMoyenne;
 
     @Override
@@ -56,20 +54,7 @@ public class MainActivity extends Activity {
 
         maMoyenne.setText(getResources().getString(R.string.accueil_ma_moyenne, moyenne(listeNotes)));
 
-        listeNotesView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Note note = listeNotes.get(position);
-                Intent intent = new Intent(getApplicationContext(), ModifyNoteActivity.class);
-                intent.putExtra("id", note.getId());
-                intent.putExtra("matiere", note.getMatiere());
-                intent.putExtra("note", note.getNote());
-                intent.putExtra("coeff", note.getCoeff());
-                startActivity(intent);
-                overridePendingTransition(R.anim.right_to_center, R.anim.center_to_left);
-                finish();
-            }
-        });
+
     }
 
     private double moyenne(List<Note> listeNotes) {

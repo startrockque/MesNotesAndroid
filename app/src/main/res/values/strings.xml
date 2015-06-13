@@ -21,5 +21,4 @@
     <string name="mod_note_title">Modifier la note</string>
     <string name="mod_coeff_matiere">Coefficient de la matière</string>
     <string name="btn_mod_note">Modifier la note</string>
-    <string name="btn_add_a_note">Ajouter une note</string>
 </resources>
